@@ -1,0 +1,124 @@
+.body {
+  background-color: #E5E5E5;
+  margin: 0;
+  display: flex;
+}
+.header {
+  background-color: #fff;
+}
+.main {
+  display: grid;
+  grid-template-columns: auto 366px;
+  grid-template-rows: auto auto;
+  margin: 30px;
+  gap: 30px;
+}
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  &__item {
+    background-color: #fff;
+  }
+}
+.search {
+  display: flex;
+  align-items: center;
+}
+.account {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  &__img {
+    border-radius: 50%;
+  }
+}
+.body-bilder {
+  background-color: var(--background);
+  margin: 5vw;
+  &__one {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    border: 10px solid var(--border);
+    border-radius: 5px;
+    display: flex;
+    z-index: 1;
+    overflow: hidden;
+  }
+  &__one::before,
+  &__one::after {
+    position: absolute;
+    content: "";
+    width: 70px;
+    height: 80px;
+    top: 60px;
+    background-color: var(--ear-color);
+    border-radius: 50%;
+    border: 6px solid var(--ear-border);
+  }
+  &__one::before {
+    left: 100px;
+  }
+  &__one::after {
+    right: 100px;
+  }
+  &__two {
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 70px);
+    width: 140px;
+    height: 140px;
+    background-color: var(--head);
+    border-radius: 50%;
+    z-index: 2;
+  }
+  &__two::before,
+  &__two::after {
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 14px;
+    background-color: var(--eye);
+    border-radius: 50%;
+    top: 26%;
+    border: 15px solid var(--eye-border);
+  }
+  &__two::before {
+    left: 20%;
+  }
+  &__two::after {
+    right: 20%;
+  }
+  &__three {
+    position: absolute;
+    top: 60px;
+    left: 52px;
+    width: 35px;
+    height: 50px;
+    background-color: var(--nose);
+    border-radius: 25px;
+    z-index: 3;
+  }
+  &__three::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: var(--head);
+    top: -63px;
+    left: -8px;
+    transform: rotate(60deg) skewX(30deg);
+    box-shadow: 35px -25px 0 0 var(--head);
+  }
+  &__three::after {
+    position: absolute;
+    content: "";
+    width: 370px;
+    height: 10px;
+    border: 15px solid var(--black);
+    top: -5px;
+    left: -50px;
+    transform: rotate(45deg) skewX(-47deg);
+  }
+}

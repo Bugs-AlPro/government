@@ -67,7 +67,7 @@ subcategory: "Принтер", body: "Кончилась бумага для п�
 <header class="header">
 
   <div class="logo">
-    <a href="#" class="logo__link">
+    <a href="picture.html" class="logo__link">
       {{ imageSvgColor('logo-base', 'logo__svg', '48', '48', 'Логотип.') }}
     </a>
     <h1 class="logo__title">Правительственный комплекс</h1>
@@ -105,6 +105,12 @@ subcategory: "Принтер", body: "Кончилась бумага для п�
 
 <main class="main">
 
+  <form class="search" action="#">
+    <button class="search__submit" type="submit" name="search-submit" value="">
+      {{ imageSvg('search', 'search__svg svg', '24', '24') }}
+    </button>
+    <input class="search__input" type="text" placeholder="Поиск по правительственному комплексу">
+  </form>
   <div class="account">
     <div class="account__info">
       <span class="account__name">Наталья</span>
@@ -114,89 +120,91 @@ subcategory: "Принтер", body: "Кончилась бумага для п�
       {{ imageJpg('account__picture', 'user', 'account__img', 'Фото контакта', '48', '48') }}
     </div>
   </div>
-  <form class="search" action="#">
-    <button class="search__submit" type="submit" name="search-submit" value="">
-      {{ imageSvg('search', 'search__svg svg', '24', '24') }}
-    </button>
-    <input class="search__input" type="text" placeholder="Поиск по правительственному комплексу">
-  </form>
   <div class="info">
-    <section class="info__item">
-      <h2 class="info__title">Ваши заявки на обслуживание</h2>
-      <ul class="requests">
-        {% for item in requests %}
-        <li class="requests__item">
-          <div class="requests__top">
-            <div class="requests__number">
-              <span>Заявка №</span>
-              <span>{{ item.number }}</span>
-              {{ imageSvg('triangle', 'requests__svg svg', '12', '12') }}
+    <div class="info__section">
+      <section class="info__item">
+        <h2 class="info__title">Ваши заявки на обслуживание</h2>
+        <ul class="requests">
+          {% for item in requests %}
+          <li class="requests__item">
+            <div class="requests__top">
+              <div class="requests__number">
+                <span>Заявка №</span>
+                <span>{{ item.number }}</span>
+                {{ imageSvg('triangle', 'requests__svg svg', '12', '12') }}
+              </div>
+              <div class="requests__status requests__{{ item.status }}">{{ item.indicator }}</div>
             </div>
-            <div class="requests__status requests__{{ item.status }}">{{ item.indicator }}</div>
-          </div>
-          <div class="requests__main">
-            <svg class="requests__svg svg" width="32" height="32">
-              <use xlink:href='img/svg/sprite-black.svg#{{ item.type }}'></use>
-            </svg>
-            <div class="requests__category">{{ item.category }}</div>
-            {{ imageSvg('triangle', 'requests__svg svg', '12', '12') }}
-            <div class="requests__subcategory">{{ item.subcategory }}</div>
-            <div class="requests__body">{{ item.body }}</div>
-          </div>
-        </li>
-        {% endfor %}
-      </ul>
-    </section>
-    <section class="info__item">
-      <h2 class="info__title">Недавние контакты</h2>
-      <ul class="recent">
-        {% for item in recent %}
-        <li class="recent__item">
-          <picture class="recent__picture">
-            <source srcset="img/{{ item.img }}.webp" type="image/webp">
-            <img src="img/{{ item.img }}.jpg" alt="Фото контакта." class="recent__img" width="32" height="32">
-          </picture>
-          <div class="recent__description">
-            <div class="recent__name">{{ item.name }}</div>
-            <div class="recent__role">{{ item.role }}</div>
-          </div>
-          <div class="recent__contact">
-            {{ imageSvg('phone', 'recent__svg svg', '16', '16') }}
-            <div class="recent__phone">{{ item.phone }}</div>
-          </div>
-        </li>
-        {% endfor %}
-      </ul>
-    </section>
-    <section class="info__item">
-      <h2 class="info__title">Бронирование переговорных</h2>
-      <ul class="rooms">
-        {% for item in rooms %}
-        <li class="rooms__item">
-          <a href="{{  item.href  }}" class="rooms__link">
-            <svg class="rooms__svg svg" width="24" height="24">
-              <use xlink:href='img/svg/sprite-black.svg#{{ item.svgName }}'></use>
-            </svg>
-            <div class="rooms__number">{{ item.number }}</div>
-            <div class="rooms__floor">{{ item.floor }}</div>
-            <div class="rooms__quantity">{{ item.quantity }}</div>
-            <time datetime="{{ item.datetime }}" class="rooms__time">{{ item.time }}</time>
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-    </section>
-    <div class="info__item">
-      <a href="#" class="info__link">
-        {{ imageSvg('navigation', 'info__svg svg', '32', '32') }}
-        <div class="info__title">ГИС. Навигация по зданию</div>
-      </a>
+            <div class="requests__main">
+              <svg class="requests__svg svg" width="32" height="32">
+                <use xlink:href='img/svg/sprite-black.svg#{{ item.type }}'></use>
+              </svg>
+              <div class="requests__category">{{ item.category }}</div>
+              {{ imageSvg('triangle', 'requests__svg svg', '12', '12') }}
+              <div class="requests__subcategory">{{ item.subcategory }}</div>
+              <div class="requests__body">{{ item.body }}</div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section class="info__item">
+        <h2 class="info__title">Бронирование переговорных</h2>
+        <ul class="rooms">
+          {% for item in rooms %}
+          <li class="rooms__item">
+            <a href="{{  item.href  }}" class="rooms__link">
+              <svg class="rooms__svg svg" width="24" height="24">
+                <use xlink:href='img/svg/sprite-black.svg#{{ item.svgName }}'></use>
+              </svg>
+              <div class="rooms__number">{{ item.number }}</div>
+              <div class="rooms__floor">{{ item.floor }}</div>
+              <div class="rooms__quantity">{{ item.quantity }}</div>
+              <time datetime="{{ item.datetime }}" class="rooms__time">{{ item.time }}</time>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
     </div>
-    <div class="info__item">
-      <a href="#" class="info__link">
-        {{ imageSvg('dinning', 'info__svg svg', '32', '32') }}
-        <div class="info__title">Столовая. Актуальное меню</div>
-      </a>
+    <div class="info__section">
+      <section class="info__item">
+        <h2 class="info__title">Недавние контакты</h2>
+        <ul class="recent">
+          {% for item in recent %}
+          <li class="recent__item">
+            <picture class="recent__picture">
+              <source srcset="img/{{ item.img }}.webp" type="image/webp">
+              <img src="img/{{ item.img }}.jpg" alt="Фото контакта." class="recent__img" width="32" height="32">
+            </picture>
+            <div class="recent__description">
+              <div class="recent__name">{{ item.name }}</div>
+              <div class="recent__role">{{ item.role }}</div>
+            </div>
+            <div class="recent__contact">
+              {{ imageSvg('phone', 'recent__svg svg', '16', '16') }}
+              <div class="recent__phone">{{ item.phone }}</div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+      <section class="info__item">
+        <h2 class="info__title">
+          <a href="#" class="info__link">
+            {{ imageSvg('navigation', 'info__svg svg', '32', '32') }}
+            <span>ГИС. Навигация по зданию</span>
+          </a>
+        </h2>
+      </section>
+      <section class="info__item">
+        <h2 class="info__title">
+          <a href="#" class="info__link">
+            {{ imageSvg('dinning', 'info__svg svg', '32', '32') }}
+            <span>Столовая. Актуальное меню</span>
+          </a>
+        </h2>
+      </section>
     </div>
   </div>
   <section class="news">
