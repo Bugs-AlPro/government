@@ -39,9 +39,13 @@
   border-radius: 50%;
 }
 
+.art {
+  display: flex;
+}
+
 .body-bilder {
   background-color: var(--background);
-  margin: 5vw;
+  padding: 50px;
 }
 .body-bilder__one {
   position: relative;
@@ -125,4 +129,35 @@
   top: -5px;
   left: -50px;
   transform: rotate(45deg) skewX(-47deg);
+}
+
+.flower {
+  width: 320px;
+}
+.flower__one {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  background-color: tomato;
+  border: 10px solid #a52a2a;
+  transform: rotate(45deg);
+  margin: 50px auto;
+}
+.flower__one::after, .flower__one::before {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 180px;
+  transform: rotate(-45deg);
+  border: 10px solid brown;
+}
+.flower__one::after {
+  left: 40px;
+  top: -40px;
+  background-color: #da8484;
+  border-radius: 100% 0 100% 50%;
+}
+.flower__one::before {
+  background-color: #fccbcb;
+  border-radius: 0 100% 50% 100%;
 }

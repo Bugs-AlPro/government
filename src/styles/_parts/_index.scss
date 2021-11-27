@@ -33,9 +33,12 @@
     border-radius: 50%;
   }
 }
+.art {
+  display: flex;
+}
 .body-bilder {
   background-color: var(--background);
-  margin: 5vw;
+  padding: 50px;
   &__one {
     position: relative;
     width: 400px;
@@ -120,5 +123,36 @@
     top: -5px;
     left: -50px;
     transform: rotate(45deg) skewX(-47deg);
+  }
+}
+.flower {
+  width: 320px;
+  &__one {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background-color: tomato;
+    border: 10px solid #a52a2a;
+    transform: rotate(45deg);
+    margin: 50px auto;
+  }
+  &__one::after,
+  &__one::before {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 180px;
+    transform: rotate(-45deg);
+    border: 10px solid brown;
+  }
+  &__one::after {
+    left: 40px;
+    top: -40px;
+    background-color: rgb(218, 132, 132);
+    border-radius: 100% 0 100% 50%;
+  }
+  &__one::before {
+    background-color: rgb(252, 203, 203);
+    border-radius: 0 100% 50% 100%;
   }
 }
