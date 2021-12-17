@@ -72,8 +72,8 @@ subcategory: "Принтер", body: "Кончилась бумага для п�
     </a>
     <h1 class="logo__title">Правительственный комплекс</h1>
   </div>
-  <nav class="nav">
-    <ul class="nav__list">
+  <nav class="nav-head">
+    <ul class="nav">
       {% for item in nav %}
       <li class="nav__item">
         <a href="{{  item.href  }}" class="nav__link">
@@ -86,15 +86,15 @@ subcategory: "Принтер", body: "Кончилась бумага для п�
       {% endfor %}
     </ul>
   </nav>
-  <ul class="header-down">
+  <ul class="nav">
     <li class="nav__item">
-      <a href="#" class="nav__link">
+      <a href="#" class="nav__link nav__link--down">
         {{ imageSvg('emergency', 'nav__svg svg', '24', '24') }}
         <div class="nav__text">Экстренные службы</div>
       </a>
     </li>
     <li class="nav__item">
-      <a href="#" class="nav__link">
+      <a href="#" class="nav__link nav__link--down">
         {{ imageSvg('mobile', 'nav__svg svg', '24', '24') }}
         <div class="nav__text">Мобильное приложение</div>
       </a>
@@ -112,10 +112,10 @@ subcategory: "Принтер", body: "Кончилась бумага для п�
     <input class="search__input" type="text" placeholder="Поиск по правительственному комплексу">
   </form>
   <div class="account">
-    <div class="account__info">
+    <a href="#" class="account__link">
       <span class="account__name">Наталья</span>
       <span class="account__surname">Севостьянова</span>
-    </div>
+    </a>
     <div class="account__photo">
       {{ imageJpg('account__picture', 'user', 'account__img', 'Фото контакта', '48', '48') }}
     </div>
@@ -128,19 +128,18 @@ subcategory: "Принтер", body: "Кончилась бумага для п�
           {% for item in requests %}
           <li class="requests__item">
             <div class="requests__top">
-              <div class="requests__number">
-                <span>Заявка №</span>
-                <span>{{ item.number }}</span>
-                {{ imageSvg('triangle', 'requests__svg svg', '12', '12') }}
+              <div class="requests__number">Заявка № {{ item.number }}
               </div>
+              {{ imageSvg('triangle', 'requests__svg svg', '12', '12') }}
               <div class="requests__status requests__{{ item.status }}">{{ item.indicator }}</div>
             </div>
             <div class="requests__main">
-              <svg class="requests__svg svg" width="32" height="32">
+              <svg class="requests__svg requests__svg--type svg" width="32" height="32">
                 <use xlink:href='img/svg/sprite-black.svg#{{ item.type }}'></use>
               </svg>
+
               <div class="requests__category">{{ item.category }}</div>
-              {{ imageSvg('triangle', 'requests__svg svg', '12', '12') }}
+              {{ imageSvg('triangle', 'requests__svg requests__svg--black svg', '12', '12') }}
               <div class="requests__subcategory">{{ item.subcategory }}</div>
               <div class="requests__body">{{ item.body }}</div>
             </div>
@@ -189,22 +188,18 @@ subcategory: "Принтер", body: "Кончилась бумага для п�
           {% endfor %}
         </ul>
       </section>
-      <section class="info__item">
-        <h2 class="info__title">
-          <a href="#" class="info__link">
-            {{ imageSvg('navigation', 'info__svg svg', '32', '32') }}
-            <span>ГИС. Навигация по зданию</span>
-          </a>
-        </h2>
-      </section>
-      <section class="info__item">
-        <h2 class="info__title">
-          <a href="#" class="info__link">
-            {{ imageSvg('dinning', 'info__svg svg', '32', '32') }}
-            <span>Столовая. Актуальное меню</span>
-          </a>
-        </h2>
-      </section>
+      <div class="info__item">
+        <a href="#" class="info__title info__title--link">
+          {{ imageSvg('navigation', 'info__svg svg', '32', '32') }}
+          <span>ГИС. Навигация по зданию</span>
+        </a>
+      </div>
+      <div class="info__item">
+        <a href="#" class="info__title info__title--link">
+          {{ imageSvg('dinning', 'info__svg svg', '32', '32') }}
+          <span>Столовая. Актуальное меню</span>
+        </a>
+      </div>
     </div>
   </div>
   <section class="news">

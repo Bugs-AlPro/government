@@ -28,8 +28,8 @@
     </a>
     <h1 class="logo__title">Правительственный комплекс</h1>
   </div>
-  <nav class="nav">
-    <ul class="nav__list">
+  <nav class="nav-head">
+    <ul class="nav">
       
       <li class="nav__item">
         <a href="#" class="nav__link">
@@ -87,9 +87,9 @@
       
     </ul>
   </nav>
-  <ul class="header-down">
+  <ul class="nav">
     <li class="nav__item">
-      <a href="#" class="nav__link">
+      <a href="#" class="nav__link nav__link--down">
         
 <svg class="nav__svg svg" width="24" height="24">
   <use xlink:href='img/svg/sprite-black.svg#emergency'></use>
@@ -99,7 +99,7 @@
       </a>
     </li>
     <li class="nav__item">
-      <a href="#" class="nav__link">
+      <a href="#" class="nav__link nav__link--down">
         
 <svg class="nav__svg svg" width="24" height="24">
   <use xlink:href='img/svg/sprite-black.svg#mobile'></use>
@@ -125,10 +125,10 @@
     <input class="search__input" type="text" placeholder="Поиск по правительственному комплексу">
   </form>
   <div class="account">
-    <div class="account__info">
+    <a href="#" class="account__link">
       <span class="account__name">Наталья</span>
       <span class="account__surname">Севостьянова</span>
-    </div>
+    </a>
     <div class="account__photo">
       
 <picture class="account__picture">
@@ -146,24 +146,23 @@
           
           <li class="requests__item">
             <div class="requests__top">
-              <div class="requests__number">
-                <span>Заявка №</span>
-                <span>560078</span>
-                
+              <div class="requests__number">Заявка № 560078
+              </div>
+              
 <svg class="requests__svg svg" width="12" height="12">
   <use xlink:href='img/svg/sprite-black.svg#triangle'></use>
 </svg>
 
-              </div>
               <div class="requests__status requests__completed">Выполнено</div>
             </div>
             <div class="requests__main">
-              <svg class="requests__svg svg" width="32" height="32">
+              <svg class="requests__svg requests__svg--type svg" width="32" height="32">
                 <use xlink:href='img/svg/sprite-black.svg#requests-pc'></use>
               </svg>
+
               <div class="requests__category">Инфраструктура</div>
               
-<svg class="requests__svg svg" width="12" height="12">
+<svg class="requests__svg requests__svg--black svg" width="12" height="12">
   <use xlink:href='img/svg/sprite-black.svg#triangle'></use>
 </svg>
 
@@ -174,25 +173,24 @@
           
           <li class="requests__item">
             <div class="requests__top">
-              <div class="requests__number">
-                <span>Заявка №</span>
-                <span>560078</span>
-                
+              <div class="requests__number">Заявка № 560078
+              </div>
+              
 <svg class="requests__svg svg" width="12" height="12">
   <use xlink:href='img/svg/sprite-black.svg#triangle'></use>
 </svg>
 
-              </div>
               <div class="requests__status requests__process">В работе</div>
             </div>
             <div class="requests__main">
-              <svg class="requests__svg svg" width="32" height="32">
+              <svg class="requests__svg requests__svg--type svg" width="32" height="32">
                 <use xlink:href='img/svg/sprite-black.svg#requests-equip'></use>
               </svg>
+
               <div class="requests__category">Мультимедиа и
 переговорные комнаты</div>
               
-<svg class="requests__svg svg" width="12" height="12">
+<svg class="requests__svg requests__svg--black svg" width="12" height="12">
   <use xlink:href='img/svg/sprite-black.svg#triangle'></use>
 </svg>
 
@@ -203,24 +201,23 @@
           
           <li class="requests__item">
             <div class="requests__top">
-              <div class="requests__number">
-                <span>Заявка №</span>
-                <span>560078</span>
-                
+              <div class="requests__number">Заявка № 560078
+              </div>
+              
 <svg class="requests__svg svg" width="12" height="12">
   <use xlink:href='img/svg/sprite-black.svg#triangle'></use>
 </svg>
 
-              </div>
               <div class="requests__status requests__waiting">Ожидание</div>
             </div>
             <div class="requests__main">
-              <svg class="requests__svg svg" width="32" height="32">
+              <svg class="requests__svg requests__svg--type svg" width="32" height="32">
                 <use xlink:href='img/svg/sprite-black.svg#requests-print'></use>
               </svg>
+
               <div class="requests__category">Печать и сканирование</div>
               
-<svg class="requests__svg svg" width="12" height="12">
+<svg class="requests__svg requests__svg--black svg" width="12" height="12">
   <use xlink:href='img/svg/sprite-black.svg#triangle'></use>
 </svg>
 
@@ -365,30 +362,26 @@
           
         </ul>
       </section>
-      <section class="info__item">
-        <h2 class="info__title">
-          <a href="#" class="info__link">
-            
+      <div class="info__item">
+        <a href="#" class="info__title info__title--link">
+          
 <svg class="info__svg svg" width="32" height="32">
   <use xlink:href='img/svg/sprite-black.svg#navigation'></use>
 </svg>
 
-            <span>ГИС. Навигация по зданию</span>
-          </a>
-        </h2>
-      </section>
-      <section class="info__item">
-        <h2 class="info__title">
-          <a href="#" class="info__link">
-            
+          <span>ГИС. Навигация по зданию</span>
+        </a>
+      </div>
+      <div class="info__item">
+        <a href="#" class="info__title info__title--link">
+          
 <svg class="info__svg svg" width="32" height="32">
   <use xlink:href='img/svg/sprite-black.svg#dinning'></use>
 </svg>
 
-            <span>Столовая. Актуальное меню</span>
-          </a>
-        </h2>
-      </section>
+          <span>Столовая. Актуальное меню</span>
+        </a>
+      </div>
     </div>
   </div>
   <section class="news">
@@ -446,12 +439,9 @@
   <!-- <script src="js/tiny.js"></script> -->
   <!-- <script src="js/slider.js"></script> -->
 
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Lobster&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Pacifico&display=swap"
-    rel="stylesheet">
- -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
 </body>
 
